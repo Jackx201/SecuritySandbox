@@ -39,7 +39,7 @@ namespace act2_8
             this.lastNameTextbox = new System.Windows.Forms.TextBox();
             this.birthdayTextbox = new System.Windows.Forms.TextBox();
             this.ageTextBox = new System.Windows.Forms.TextBox();
-            this.irsTextbox = new System.Windows.Forms.TextBox();
+            this.irsnTextbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.userTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
@@ -96,9 +96,9 @@ namespace act2_8
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(537, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 13);
+            this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "IRS";
+            this.label5.Text = "IRSN";
             // 
             // label6
             // 
@@ -136,7 +136,6 @@ namespace act2_8
             this.birthdayTextbox.Size = new System.Drawing.Size(100, 20);
             this.birthdayTextbox.TabIndex = 8;
             this.birthdayTextbox.Tag = "Birthday";
-            this.birthdayTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // ageTextBox
             // 
@@ -147,13 +146,13 @@ namespace act2_8
             this.ageTextBox.Tag = "Age";
             this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
-            // irsTextbox
+            // irsnTextbox
             // 
-            this.irsTextbox.Location = new System.Drawing.Point(505, 70);
-            this.irsTextbox.Name = "irsTextbox";
-            this.irsTextbox.Size = new System.Drawing.Size(100, 20);
-            this.irsTextbox.TabIndex = 10;
-            this.irsTextbox.Tag = "IRS";
+            this.irsnTextbox.Location = new System.Drawing.Point(505, 70);
+            this.irsnTextbox.Name = "irsnTextbox";
+            this.irsnTextbox.Size = new System.Drawing.Size(100, 20);
+            this.irsnTextbox.TabIndex = 10;
+            this.irsnTextbox.Tag = "IRSN";
             // 
             // label7
             // 
@@ -283,7 +282,7 @@ namespace act2_8
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.userTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.irsTextbox);
+            this.Controls.Add(this.irsnTextbox);
             this.Controls.Add(this.ageTextBox);
             this.Controls.Add(this.birthdayTextbox);
             this.Controls.Add(this.lastNameTextbox);
@@ -315,7 +314,7 @@ namespace act2_8
         private System.Windows.Forms.TextBox lastNameTextbox;
         private System.Windows.Forms.TextBox birthdayTextbox;
         private System.Windows.Forms.TextBox ageTextBox;
-        private System.Windows.Forms.TextBox irsTextbox;
+        private System.Windows.Forms.TextBox irsnTextbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;

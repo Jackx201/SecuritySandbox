@@ -45,12 +45,6 @@ namespace act2_8
 
         private void validarNumero(KeyPressEventArgs e, object sender)
         {
-            /*string senderText = (sender as TextBox).Text;
-            string senderName = (sender as TextBox).Name;
-            string[] splitByDecimal = senderText.Split('.');
-            int cursorPosition = (sender as TextBox).SelectionStart;
-            */
-
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -65,7 +59,7 @@ namespace act2_8
                 lastNameTextbox,
                 birthdayTextbox,
                 ageTextBox,
-                irsTextbox,
+                irsnTextbox,
                 userTextBox,
                 passwordTextBox
             };
@@ -129,11 +123,11 @@ namespace act2_8
             cmd1.Parameters.Add("@salt", SqlDbType.VarBinary);
 
             cmd1.Parameters["@enrollmentid"].Value = "12345678";
-            cmd1.Parameters["@name"].Value = "Martina";
-            cmd1.Parameters["@last_name"].Value = "Fuentes";
-            cmd1.Parameters["@birthday"].Value = "01/01/2020";
-            cmd1.Parameters["@age"].Value = 33;
-            cmd1.Parameters["@irsn"].Value = "x123456789012";
+            cmd1.Parameters["@name"].Value = nameTextbox.Text;
+            cmd1.Parameters["@last_name"].Value = lastNameTextbox.Text;
+            cmd1.Parameters["@birthday"].Value = birthdayTextbox.Text;
+            cmd1.Parameters["@age"].Value = Convert.ToInt32(ageTextBox.Text);
+            cmd1.Parameters["@irsn"].Value = irsnTextbox.Text;
             cmd1.Parameters["@username"].Value = username;
             cmd1.Parameters["@password"].Value = Encoding.UTF8.GetBytes(password);
             cmd1.Parameters["@salt"].Value = salt;
@@ -171,10 +165,7 @@ namespace act2_8
             validarNumero(e, sender);
         }
 
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
