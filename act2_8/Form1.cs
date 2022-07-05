@@ -27,13 +27,11 @@ namespace act2_8
         public Form1()
         {
             InitializeComponent();
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ERROR.Visible = false;
-            label8.Visible = false;
+
         }
 
         private void validarTexto( KeyPressEventArgs e)
@@ -62,19 +60,25 @@ namespace act2_8
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (validateTextBox(nameTextbox))
+            TextBox[] textBoxes = new TextBox[] { 
+                nameTextbox, 
+                lastNameTextbox,
+                birthdayTextbox,
+                ageTextBox,
+                irsTextbox,
+                userTextBox,
+                passwordTextBox
+            };
+            
+            foreach(TextBox textBox in textBoxes)
             {
-                MessageBox.Show("It Works");
-            } else
-            {
-                MessageBox.Show("Empty String");
-                return;
+                if (!validateTextBox(textBox))
+                {
+                    MessageBox.Show("The field: " + textBox.Tag + " must be filled");
+                    return;
+                }
             }
 
-            //SqlConnection myConnection = new SqlConnection(@"user id=sa;" + @"password=utlaguna1.; " +
-            //    @"server = CTEUTLD01\SEGURIDADB;" 
-            //    + @"database = securityB;" 
-            //    + @"connection timeout=30");
 
             SqlConnection myConnection =
                 new SqlConnection(@"user id=DESKTOP-NHVI6LM\User072020;" +
@@ -82,7 +86,6 @@ namespace act2_8
                 //@"Trusted_Connection=yes" +
                 @"database=SecurityB;" +
                 @"connection timeout = 30");
-
             SqlConnection conexion = new SqlConnection("server=DESKTOP-NHVI6LM ; database=SecurityB ; integrated security = true");
 
             //Conn to DB
@@ -112,8 +115,8 @@ namespace act2_8
 
             SqlCommand cmd1 = new SqlCommand(query1, conexion);
             byte[] salt = encriptar.GenerateSalt();
-            string password = textBox7.Text.Trim();
-            string username = textBox6.Text.Trim();
+            string password = passwordTextBox.Text.Trim();
+            string username = userTextBox.Text.Trim();
 
             cmd1.Parameters.Add("@enrollmentid", SqlDbType.Char);
             cmd1.Parameters.Add("@name", SqlDbType.VarChar);
@@ -175,7 +178,7 @@ namespace act2_8
 
         private void button2_Click(object sender, EventArgs e)
         {
-            plainText = ByteConverter.GetBytes(textBox7.Text);
+            plainText = ByteConverter.GetBytes(passwordTextBox.Text);
             encryptedText = Encryption(plainText, RSA.ExportParameters(false), false);
             textBox8.Text = ByteConverter.GetString(encryptedText);
         }
@@ -237,3 +240,8 @@ namespace act2_8
         }
     }
 }
+
+//SqlConnection myConnection = new SqlConnection(@"user id=sa;" + @"password=utlaguna1.; " +
+//    @"server = CTEUTLD01\SEGURIDADB;" 
+//    + @"database = securityB;" 
+//    + @"connection timeout=30");
