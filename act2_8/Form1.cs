@@ -12,11 +12,10 @@ using System.Security.Cryptography;
 using System.Web;
 using System.IO;
 
-
-
 namespace act2_8
 {
-    
+
+
     public partial class Form1 : Form
     {
         UnicodeEncoding ByteConverter = new UnicodeEncoding();
@@ -73,32 +72,24 @@ namespace act2_8
                 }
             }
 
-
-            SqlConnection myConnection =
-                new SqlConnection(@"user id=DESKTOP-NHVI6LM\User072020;" +
-                @"password=115;server=DESKTOP-NHVI6LM;" +
-                //@"Trusted_Connection=yes" +
-                @"database=SecurityB;" +
-                @"connection timeout = 30");
             SqlConnection conexion = new SqlConnection("server=DESKTOP-NHVI6LM ; database=SecurityB ; integrated security = true");
 
             //Conn to DB
             try
             {
-                conexion.Open(); //Opens con to DB
-                ERROR.Visible = true;
-                ERROR.Text = "CONNECTION SUCCEED";
+                conexion.Open(); 
+                SUCCESS.Visible = true;
+                SUCCESS.Text = "CONNECTION SUCCEED";
             }
             catch (SqlException sqlEx)
             {
                 ERROR.Visible = true;
-                label8.Visible = true;
-                label8.Text = "ERROR 10000 SOMETHING WENT WRONG" + sqlEx;
+                ERROR.Text = "ERROR 10000 SOMETHING WENT WRONG" + sqlEx;
                 conexion.Close();
                 return;
             } catch (Exception ex1)
             {
-                label8.Text = "ERROR 20000 CALL THE TECH GUY" + ex1;
+                ERROR.Text = "ERROR 20000 CALL THE TECH GUY" + ex1;
                 return;
             }
 
@@ -136,16 +127,16 @@ namespace act2_8
             try
             {
                 cmd1.ExecuteNonQuery();
-                ERROR.Visible = true;
-                ERROR.Text = "Nuevo Alumno registrado correctamente!";
-                myConnection.Close();
+                SUCCESS.Visible = true;
+                SUCCESS.Text = "New Student Registered Successfully!";
+                conexion.Close();
             }
             catch (Exception err)
             {
                 ERROR.Visible = true;
                 MessageBox.Show(err + "");
                 ERROR.Text = "Error 10001: Query Failed";
-                myConnection.Close();
+                conexion.Close();
             }
 
         }
@@ -227,12 +218,31 @@ namespace act2_8
             {
                 return true;
             }
-            return false;
+                return false;
+        }
+
+        private void calendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            string date = calendar.SelectionRange.Start.ToShortDateString();
+            birthdayTextbox.Text = date;
+        }
+
+        private void nameTextbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
 
-//SqlConnection myConnection = new SqlConnection(@"user id=sa;" + @"password=utlaguna1.; " +
-//    @"server = CTEUTLD01\SEGURIDADB;" 
-//    + @"database = securityB;" 
-//    + @"connection timeout=30");
+/*SqlConnection myConnection = new SqlConnection(@"user id=sa;" + @"password=utlaguna1.; " +
+    @"server = CTEUTLD01\SEGURIDADB;" 
+    @"database = securityB;" 
+    + @"connection timeout=30");
+
+SqlConnection myConnection =
+    new SqlConnection(@"user id=DESKTOP-NHVI6LM\User072020;" +
+    @"password=7859;server=DESKTOP-NHVI6LM;" +
+    @"Trusted_Connection=yes" +
+    @"database=SecurityB;" +
+    @"connection timeout = 30");
+*/
