@@ -29,7 +29,7 @@ namespace act2_8
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextbox = new System.Windows.Forms.TextBox();
             this.lastNameTextbox = new System.Windows.Forms.TextBox();
@@ -95,10 +95,10 @@ namespace act2_8
             this.nameTextbox.Location = new System.Drawing.Point(18, 14);
             this.nameTextbox.MaxLength = 50;
             this.nameTextbox.Name = "nameTextbox";
+            this.nameTextbox.ShortcutsEnabled = false;
             this.nameTextbox.Size = new System.Drawing.Size(173, 20);
             this.nameTextbox.TabIndex = 6;
             this.nameTextbox.Tag = "Name";
-            this.nameTextbox.TextChanged += new System.EventHandler(this.nameTextbox_TextChanged);
             this.nameTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // lastNameTextbox
@@ -110,6 +110,7 @@ namespace act2_8
             this.lastNameTextbox.Location = new System.Drawing.Point(18, 15);
             this.lastNameTextbox.MaxLength = 50;
             this.lastNameTextbox.Name = "lastNameTextbox";
+            this.lastNameTextbox.ShortcutsEnabled = false;
             this.lastNameTextbox.Size = new System.Drawing.Size(173, 20);
             this.lastNameTextbox.TabIndex = 7;
             this.lastNameTextbox.Tag = "Last Name";
@@ -132,11 +133,13 @@ namespace act2_8
             this.ageTextBox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ageTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.ageTextBox.Location = new System.Drawing.Point(16, 15);
+            this.ageTextBox.MaxLength = 2;
             this.ageTextBox.Name = "ageTextBox";
+            this.ageTextBox.ShortcutsEnabled = false;
             this.ageTextBox.Size = new System.Drawing.Size(175, 20);
             this.ageTextBox.TabIndex = 9;
             this.ageTextBox.Tag = "Age";
-            this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageTextBox_KeyPress);
             // 
             // irsnTextbox
             // 
@@ -145,7 +148,9 @@ namespace act2_8
             this.irsnTextbox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.irsnTextbox.ForeColor = System.Drawing.Color.White;
             this.irsnTextbox.Location = new System.Drawing.Point(18, 15);
+            this.irsnTextbox.MaxLength = 50;
             this.irsnTextbox.Name = "irsnTextbox";
+            this.irsnTextbox.ShortcutsEnabled = false;
             this.irsnTextbox.Size = new System.Drawing.Size(173, 20);
             this.irsnTextbox.TabIndex = 10;
             this.irsnTextbox.Tag = "IRSN";
@@ -157,7 +162,9 @@ namespace act2_8
             this.userTextBox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextBox.ForeColor = System.Drawing.Color.White;
             this.userTextBox.Location = new System.Drawing.Point(16, 14);
+            this.userTextBox.MaxLength = 50;
             this.userTextBox.Name = "userTextBox";
+            this.userTextBox.ShortcutsEnabled = false;
             this.userTextBox.Size = new System.Drawing.Size(184, 20);
             this.userTextBox.TabIndex = 12;
             this.userTextBox.Tag = "User";
@@ -169,7 +176,9 @@ namespace act2_8
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.White;
             this.passwordTextBox.Location = new System.Drawing.Point(18, 14);
+            this.passwordTextBox.MaxLength = 50;
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.ShortcutsEnabled = false;
             this.passwordTextBox.Size = new System.Drawing.Size(173, 20);
             this.passwordTextBox.TabIndex = 13;
             this.passwordTextBox.Tag = "Password";
@@ -191,14 +200,14 @@ namespace act2_8
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridView1.GridColor = System.Drawing.Color.Red;
             this.dataGridView1.Location = new System.Drawing.Point(548, 1);
             this.dataGridView1.Name = "dataGridView1";
@@ -308,7 +317,7 @@ namespace act2_8
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(304, 388);
+            this.label4.Location = new System.Drawing.Point(304, 422);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 38);
             this.label4.TabIndex = 27;
@@ -483,7 +492,7 @@ namespace act2_8
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.panel6.Controls.Add(this.irsnTextbox);
             this.panel6.Controls.Add(this.textBox7);
-            this.panel6.Location = new System.Drawing.Point(311, 429);
+            this.panel6.Location = new System.Drawing.Point(311, 463);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(213, 49);
             this.panel6.TabIndex = 32;
@@ -506,7 +515,7 @@ namespace act2_8
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(20)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1151, 676);
+            this.ClientSize = new System.Drawing.Size(545, 676);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -533,6 +542,7 @@ namespace act2_8
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register New Student";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -30,7 +30,7 @@ namespace act2_8
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Console.WriteLine("Booting Up");
         }
 
         private void validarTexto( KeyPressEventArgs e)
@@ -42,13 +42,12 @@ namespace act2_8
             }
         }
 
-        private void validarNumero(KeyPressEventArgs e, object sender)
+        private void validateNumber(KeyPressEventArgs e, object sender)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,9 +71,17 @@ namespace act2_8
                 }
             }
 
+            int age = 0;
+            try
+            {
+                age = Convert.ToInt32(ageTextBox.Text);
+            } catch
+            {
+
+            }
+
             SqlConnection conexion = new SqlConnection("server=DESKTOP-NHVI6LM ; database=SecurityB ; integrated security = true");
 
-            //Conn to DB
             try
             {
                 conexion.Open(); 
@@ -151,13 +158,6 @@ namespace act2_8
             validarTexto(e);
         }
 
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarNumero(e, sender);
-        }
-
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             plainText = ByteConverter.GetBytes(passwordTextBox.Text);
@@ -227,9 +227,9 @@ namespace act2_8
             birthdayTextbox.Text = date;
         }
 
-        private void nameTextbox_TextChanged(object sender, EventArgs e)
+        private void ageTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            validateNumber(e, sender);
         }
     }
 }
