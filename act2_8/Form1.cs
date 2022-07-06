@@ -33,7 +33,7 @@ namespace act2_8
             Console.WriteLine("Booting Up");
         }
 
-        private void validarTexto( KeyPressEventArgs e)
+        private void validateText( KeyPressEventArgs e)
         {
 
             if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Left) && !(e.KeyChar == (char)Keys.Right) && !(e.KeyChar == (char)Keys.Space) && !(e.KeyChar == (char)Keys.Back))
@@ -50,7 +50,7 @@ namespace act2_8
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void submitButton_Click(object sender, EventArgs e)
         {
             TextBox[] textBoxes = new TextBox[] { 
                 nameTextbox, 
@@ -71,14 +71,6 @@ namespace act2_8
                 }
             }
 
-            int age = 0;
-            try
-            {
-                age = Convert.ToInt32(ageTextBox.Text);
-            } catch
-            {
-
-            }
 
             SqlConnection conexion = new SqlConnection("server=DESKTOP-NHVI6LM ; database=SecurityB ; integrated security = true");
 
@@ -100,8 +92,6 @@ namespace act2_8
                 return;
             }
 
-
-            //New Query (Test)
             string query1;
             query1 = "INSERT INTO students VALUES (@enrollmentid, @name, @last_name, @birthday, @age, @irsn, @username , @password, @salt);";
 
@@ -145,24 +135,6 @@ namespace act2_8
                 ERROR.Text = "Error 10001: Query Failed";
                 conexion.Close();
             }
-
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarTexto(e);
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarTexto(e);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            plainText = ByteConverter.GetBytes(passwordTextBox.Text);
-            encryptedText = Encryption(plainText, RSA.ExportParameters(false), false);
-            textBox8.Text = ByteConverter.GetString(encryptedText);
         }
 
         static public byte [] Encryption(byte[] Data, RSAParameters RSAKey, bool DoOAEPPadding)
@@ -180,12 +152,6 @@ namespace act2_8
                 Console.WriteLine(e.Message);
                 return null;
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            byte[] decryptedText = Decryption(encryptedText, RSA.ExportParameters(true), false);
-            textBox9.Text = ByteConverter.GetString(decryptedText);
         }
 
         static public byte[] Decryption(byte[] Data, RSAParameters RSAKey, bool DoOAEPPadding)
@@ -207,10 +173,6 @@ namespace act2_8
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            textBox8.Text = ByteConverter.GetString(encriptar.GenerateSalt());
-        }
 
         private bool validateTextBox(TextBox textBox)
         {
@@ -230,6 +192,34 @@ namespace act2_8
         private void ageTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             validateNumber(e, sender);
+        }
+
+        private void fisrtNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validateText(e);
+        }
+
+        private void lastNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validateText(e);
+        }
+
+        private void generateSaltButton_Click(object sender, EventArgs e)
+        {
+            saltTextBox.Text = ByteConverter.GetString(encriptar.GenerateSalt());
+        }
+
+        private void decryptButton_Click(object sender, EventArgs e)
+        {
+            byte[] decryptedText = Decryption(encryptedText, RSA.ExportParameters(true), false);
+            textBox9.Text = ByteConverter.GetString(decryptedText);
+        }
+
+        private void passwordButton_Click(object sender, EventArgs e)
+        {
+            plainText = ByteConverter.GetBytes(passwordTextBox.Text);
+            encryptedText = Encryption(plainText, RSA.ExportParameters(false), false);
+            saltTextBox.Text = ByteConverter.GetString(encryptedText);
         }
     }
 }

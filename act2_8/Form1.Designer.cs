@@ -29,7 +29,7 @@ namespace act2_8
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextbox = new System.Windows.Forms.TextBox();
             this.lastNameTextbox = new System.Windows.Forms.TextBox();
@@ -38,12 +38,12 @@ namespace act2_8
             this.irsnTextbox = new System.Windows.Forms.TextBox();
             this.userTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ERROR = new System.Windows.Forms.Label();
             this.SUCCESS = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.decryptButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,11 +52,11 @@ namespace act2_8
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.saltTextBox = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -99,7 +99,7 @@ namespace act2_8
             this.nameTextbox.Size = new System.Drawing.Size(173, 20);
             this.nameTextbox.TabIndex = 6;
             this.nameTextbox.Tag = "Name";
-            this.nameTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.nameTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fisrtNameTextBox_KeyPress);
             // 
             // lastNameTextbox
             // 
@@ -114,7 +114,7 @@ namespace act2_8
             this.lastNameTextbox.Size = new System.Drawing.Size(173, 20);
             this.lastNameTextbox.TabIndex = 7;
             this.lastNameTextbox.Tag = "Last Name";
-            this.lastNameTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.lastNameTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lastNameTextBox_KeyPress);
             // 
             // birthdayTextbox
             // 
@@ -184,30 +184,30 @@ namespace act2_8
             this.passwordTextBox.Tag = "Password";
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
-            // button1
+            // submitButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(163)))), ((int)(((byte)(231)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(128, 539);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 40);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.submitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(163)))), ((int)(((byte)(231)))));
+            this.submitButton.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitButton.ForeColor = System.Drawing.Color.Black;
+            this.submitButton.Location = new System.Drawing.Point(128, 539);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(255, 40);
+            this.submitButton.TabIndex = 14;
+            this.submitButton.Text = "Add";
+            this.submitButton.UseVisualStyleBackColor = false;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.Red;
             this.dataGridView1.Location = new System.Drawing.Point(548, 1);
             this.dataGridView1.Name = "dataGridView1";
@@ -219,7 +219,7 @@ namespace act2_8
             this.ERROR.AutoSize = true;
             this.ERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ERROR.ForeColor = System.Drawing.Color.Red;
-            this.ERROR.Location = new System.Drawing.Point(125, 620);
+            this.ERROR.Location = new System.Drawing.Point(134, 620);
             this.ERROR.Name = "ERROR";
             this.ERROR.Size = new System.Drawing.Size(34, 13);
             this.ERROR.TabIndex = 16;
@@ -232,7 +232,7 @@ namespace act2_8
             this.SUCCESS.Cursor = System.Windows.Forms.Cursors.Default;
             this.SUCCESS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SUCCESS.ForeColor = System.Drawing.Color.LawnGreen;
-            this.SUCCESS.Location = new System.Drawing.Point(125, 592);
+            this.SUCCESS.Location = new System.Drawing.Point(134, 592);
             this.SUCCESS.Name = "SUCCESS";
             this.SUCCESS.Size = new System.Drawing.Size(55, 13);
             this.SUCCESS.TabIndex = 17;
@@ -248,18 +248,18 @@ namespace act2_8
             this.button2.TabIndex = 18;
             this.button2.Text = "Password";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.passwordButton_Click);
             // 
-            // button3
+            // decryptButton
             // 
-            this.button3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button3.Location = new System.Drawing.Point(767, 40);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(211, 23);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Decrypt";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.decryptButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.decryptButton.Location = new System.Drawing.Point(767, 40);
+            this.decryptButton.Name = "decryptButton";
+            this.decryptButton.Size = new System.Drawing.Size(211, 23);
+            this.decryptButton.TabIndex = 21;
+            this.decryptButton.Text = "Decrypt";
+            this.decryptButton.UseVisualStyleBackColor = true;
+            this.decryptButton.Click += new System.EventHandler(this.decryptButton_Click);
             // 
             // button4
             // 
@@ -270,7 +270,7 @@ namespace act2_8
             this.button4.TabIndex = 22;
             this.button4.Text = "Salt";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.generateSaltButton_Click);
             // 
             // calendar
             // 
@@ -343,13 +343,13 @@ namespace act2_8
             this.label5.TabIndex = 29;
             this.label5.Text = "Password";
             // 
-            // textBox8
+            // saltTextBox
             // 
-            this.textBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox8.Location = new System.Drawing.Point(767, 134);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(211, 20);
-            this.textBox8.TabIndex = 19;
+            this.saltTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.saltTextBox.Location = new System.Drawing.Point(767, 134);
+            this.saltTextBox.Name = "saltTextBox";
+            this.saltTextBox.Size = new System.Drawing.Size(211, 20);
+            this.saltTextBox.TabIndex = 19;
             // 
             // textBox9
             // 
@@ -369,15 +369,6 @@ namespace act2_8
             this.panel1.Size = new System.Drawing.Size(213, 49);
             this.panel1.TabIndex = 30;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.panel2.Controls.Add(this.lastNameTextbox);
-            this.panel2.Location = new System.Drawing.Point(28, 193);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 49);
-            this.panel2.TabIndex = 31;
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
@@ -390,6 +381,15 @@ namespace act2_8
             this.textBox1.Size = new System.Drawing.Size(173, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.Tag = "Name";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.panel2.Controls.Add(this.lastNameTextbox);
+            this.panel2.Location = new System.Drawing.Point(28, 193);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(213, 49);
+            this.panel2.TabIndex = 31;
             // 
             // panel3
             // 
@@ -515,7 +515,7 @@ namespace act2_8
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(20)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(545, 676);
+            this.ClientSize = new System.Drawing.Size(1148, 676);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -523,15 +523,15 @@ namespace act2_8
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.submitButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.decryptButton);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.saltTextBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SUCCESS);
             this.Controls.Add(this.ERROR);
@@ -573,12 +573,12 @@ namespace act2_8
         private System.Windows.Forms.TextBox irsnTextbox;
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label ERROR;
         private System.Windows.Forms.Label SUCCESS;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button decryptButton;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.Label label1;
@@ -587,7 +587,7 @@ namespace act2_8
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox saltTextBox;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
