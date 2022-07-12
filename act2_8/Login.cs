@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient; //lib SQL
 
 namespace act2_8
 {
     public partial class Login : Form
     {
-        int y = 200;
         public Login()
         {
             InitializeComponent();
@@ -20,12 +20,88 @@ namespace act2_8
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Button btn1 = new Button();
-            btn1.Size = new Size(150, 100);
-            btn1.Location = new Point(500, y);
-            btn1.Text = "This is a new Button created dynamically";
-            this.Controls.Add(btn1);
-            y += 150;
+            string username = usernameTextBox.Text;
+            string password = passwordTextBox.Text;
+
+            if(isValidPassword(username, password))
+            {
+                notificationLabel.Text = "Welcome " + username;
+                changeForm();
+
+            } else
+            {
+                notificationLabel.Text = "Incorrect Username or Password";
+            }
+        }
+
+        private bool isValidPassword(string username, string password)
+        {
+            userBE user = getUserFromDB(username);
+            bool isValid = false;
+
+            if(!string.IsNullOrEmpty(user.user))
+            {
+                byte[] hashedPassword = encriptar.HashPasswordWithSalt(Encoding.UTF8.GetBytes(password), user.salt);
+                
+                if (hashedPassword.SequenceEqual(user.pass))
+                {
+                    isValid = true;
+                }
+                    
+            }
+
+            return isValid;
+        }
+
+        private userBE getUserFromDB(string username)
+        {
+            userBE user = new userBE();
+
+
+            using (SqlConnection connection = new SqlConnection("server=DESKTOP-NHVI6LM ; database=SecurityB ; integrated security = true"))
+            {
+                string saltSaved = "select username, salt, password from students where username = @username";
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = saltSaved;
+                    command.Parameters.Add("@username", SqlDbType.VarChar, 50).Value = username;
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader oReader = command.ExecuteReader())
+                        {
+                            if (oReader.Read())
+                            {
+                                user.user = oReader["username"].ToString();
+                                user.salt = (byte[])oReader["salt"];
+                                user.pass = (byte[])oReader["password"];
+                            }
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        notificationLabel.Text = ex.Message;
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            return user;
+        }
+
+        private void changeForm()
+        {
+            new Form1().Show();
+            this.Close();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

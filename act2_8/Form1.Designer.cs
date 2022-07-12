@@ -29,7 +29,7 @@ namespace act2_8
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextbox = new System.Windows.Forms.TextBox();
             this.lastNameTextbox = new System.Windows.Forms.TextBox();
@@ -67,6 +67,16 @@ namespace act2_8
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,6 +84,9 @@ namespace act2_8
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -119,10 +132,11 @@ namespace act2_8
             // birthdayTextbox
             // 
             this.birthdayTextbox.Enabled = false;
-            this.birthdayTextbox.Location = new System.Drawing.Point(32, 318);
+            this.birthdayTextbox.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birthdayTextbox.Location = new System.Drawing.Point(9, 55);
             this.birthdayTextbox.Name = "birthdayTextbox";
             this.birthdayTextbox.ReadOnly = true;
-            this.birthdayTextbox.Size = new System.Drawing.Size(192, 20);
+            this.birthdayTextbox.Size = new System.Drawing.Size(192, 34);
             this.birthdayTextbox.TabIndex = 8;
             this.birthdayTextbox.Tag = "Birthday";
             // 
@@ -132,11 +146,11 @@ namespace act2_8
             this.ageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ageTextBox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ageTextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.ageTextBox.Location = new System.Drawing.Point(16, 15);
+            this.ageTextBox.Location = new System.Drawing.Point(9, 13);
             this.ageTextBox.MaxLength = 2;
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.ShortcutsEnabled = false;
-            this.ageTextBox.Size = new System.Drawing.Size(175, 20);
+            this.ageTextBox.Size = new System.Drawing.Size(191, 20);
             this.ageTextBox.TabIndex = 9;
             this.ageTextBox.Tag = "Age";
             this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageTextBox_KeyPress);
@@ -187,9 +201,10 @@ namespace act2_8
             // submitButton
             // 
             this.submitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(163)))), ((int)(((byte)(231)))));
+            this.submitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitButton.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.Color.Black;
-            this.submitButton.Location = new System.Drawing.Point(128, 539);
+            this.submitButton.Location = new System.Drawing.Point(145, 593);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(255, 40);
             this.submitButton.TabIndex = 14;
@@ -200,14 +215,14 @@ namespace act2_8
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.GridColor = System.Drawing.Color.Red;
             this.dataGridView1.Location = new System.Drawing.Point(548, 1);
             this.dataGridView1.Name = "dataGridView1";
@@ -219,7 +234,7 @@ namespace act2_8
             this.ERROR.AutoSize = true;
             this.ERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ERROR.ForeColor = System.Drawing.Color.Red;
-            this.ERROR.Location = new System.Drawing.Point(134, 620);
+            this.ERROR.Location = new System.Drawing.Point(144, 676);
             this.ERROR.Name = "ERROR";
             this.ERROR.Size = new System.Drawing.Size(34, 13);
             this.ERROR.TabIndex = 16;
@@ -232,7 +247,7 @@ namespace act2_8
             this.SUCCESS.Cursor = System.Windows.Forms.Cursors.Default;
             this.SUCCESS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SUCCESS.ForeColor = System.Drawing.Color.LawnGreen;
-            this.SUCCESS.Location = new System.Drawing.Point(134, 592);
+            this.SUCCESS.Location = new System.Drawing.Point(144, 648);
             this.SUCCESS.Name = "SUCCESS";
             this.SUCCESS.Size = new System.Drawing.Size(55, 13);
             this.SUCCESS.TabIndex = 17;
@@ -275,11 +290,11 @@ namespace act2_8
             // calendar
             // 
             this.calendar.BackColor = System.Drawing.SystemColors.WindowText;
-            this.calendar.Location = new System.Drawing.Point(32, 350);
+            this.calendar.Location = new System.Drawing.Point(10, 101);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 23;
             this.calendar.TitleBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.calendar.TitleForeColor = System.Drawing.Color.AliceBlue;
+            this.calendar.TitleForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.calendar.TrailingForeColor = System.Drawing.SystemColors.HotTrack;
             this.calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateChanged);
             // 
@@ -297,7 +312,7 @@ namespace act2_8
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 265);
+            this.label2.Location = new System.Drawing.Point(3, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 38);
             this.label2.TabIndex = 25;
@@ -307,7 +322,7 @@ namespace act2_8
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(304, 265);
+            this.label3.Location = new System.Drawing.Point(304, 358);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 38);
             this.label3.TabIndex = 26;
@@ -317,7 +332,7 @@ namespace act2_8
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(304, 422);
+            this.label4.Location = new System.Drawing.Point(304, 470);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 38);
             this.label4.TabIndex = 27;
@@ -337,7 +352,7 @@ namespace act2_8
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(304, 144);
+            this.label5.Location = new System.Drawing.Point(304, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 38);
             this.label5.TabIndex = 29;
@@ -433,7 +448,7 @@ namespace act2_8
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.panel4.Controls.Add(this.passwordTextBox);
             this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Location = new System.Drawing.Point(311, 195);
+            this.panel4.Location = new System.Drawing.Point(311, 303);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(213, 49);
             this.panel4.TabIndex = 32;
@@ -457,9 +472,9 @@ namespace act2_8
             this.panel5.Controls.Add(this.ageTextBox);
             this.panel5.Controls.Add(this.textBox5);
             this.panel5.Controls.Add(this.textBox6);
-            this.panel5.Location = new System.Drawing.Point(311, 313);
+            this.panel5.Location = new System.Drawing.Point(311, 411);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(213, 49);
+            this.panel5.Size = new System.Drawing.Size(213, 47);
             this.panel5.TabIndex = 33;
             // 
             // textBox5
@@ -492,7 +507,7 @@ namespace act2_8
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.panel6.Controls.Add(this.irsnTextbox);
             this.panel6.Controls.Add(this.textBox7);
-            this.panel6.Location = new System.Drawing.Point(311, 463);
+            this.panel6.Location = new System.Drawing.Point(311, 511);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(213, 49);
             this.panel6.TabIndex = 32;
@@ -510,12 +525,131 @@ namespace act2_8
             this.textBox7.TabIndex = 7;
             this.textBox7.Tag = "Last Name";
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.logoutButton);
+            this.panel7.Location = new System.Drawing.Point(-10, 706);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(567, 79);
+            this.panel7.TabIndex = 33;
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(175)))), ((int)(((byte)(148)))));
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutButton.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutButton.ForeColor = System.Drawing.Color.Black;
+            this.logoutButton.Location = new System.Drawing.Point(386, 15);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(148, 51);
+            this.logoutButton.TabIndex = 34;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(339, 25);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "Zahúl Guadalupe Domínguez Chávez";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(265, 16);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Universidad Tecnológica de la Laguna Durango";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.panel8.Controls.Add(this.emailTextBox);
+            this.panel8.Controls.Add(this.textBox10);
+            this.panel8.Controls.Add(this.textBox11);
+            this.panel8.Location = new System.Drawing.Point(311, 193);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(213, 47);
+            this.panel8.TabIndex = 35;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emailTextBox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.emailTextBox.Location = new System.Drawing.Point(9, 14);
+            this.emailTextBox.MaxLength = 50;
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.ShortcutsEnabled = false;
+            this.emailTextBox.Size = new System.Drawing.Size(191, 20);
+            this.emailTextBox.TabIndex = 9;
+            this.emailTextBox.Tag = "E-Mail";
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox10.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.ForeColor = System.Drawing.Color.White;
+            this.textBox10.Location = new System.Drawing.Point(18, 14);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(173, 20);
+            this.textBox10.TabIndex = 13;
+            this.textBox10.Tag = "Password";
+            // 
+            // textBox11
+            // 
+            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox11.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.ForeColor = System.Drawing.Color.White;
+            this.textBox11.Location = new System.Drawing.Point(18, 15);
+            this.textBox11.MaxLength = 50;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(173, 20);
+            this.textBox11.TabIndex = 7;
+            this.textBox11.Tag = "Last Name";
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.Location = new System.Drawing.Point(304, 140);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(91, 38);
+            this.emailLabel.TabIndex = 34;
+            this.emailLabel.Text = "Email";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.panel9.Controls.Add(this.calendar);
+            this.panel9.Controls.Add(this.birthdayTextbox);
+            this.panel9.Controls.Add(this.label2);
+            this.panel9.Location = new System.Drawing.Point(28, 272);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(213, 288);
+            this.panel9.TabIndex = 33;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(20)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1148, 676);
+            this.ClientSize = new System.Drawing.Size(543, 786);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -525,9 +659,7 @@ namespace act2_8
             this.Controls.Add(this.label4);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.calendar);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.decryptButton);
             this.Controls.Add(this.textBox9);
@@ -536,11 +668,12 @@ namespace act2_8
             this.Controls.Add(this.SUCCESS);
             this.Controls.Add(this.ERROR);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.birthdayTextbox);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel9);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register New Student";
@@ -558,6 +691,12 @@ namespace act2_8
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,6 +741,16 @@ namespace act2_8
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Panel panel9;
     }
 }
 

@@ -16,8 +16,16 @@ namespace act2_8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
-            Application.Run(new Form1());
+            var start = new Login();
+            start.FormClosed += WindowClosed;
+            start.Show();
+            Application.Run();
+        }
+
+        static void WindowClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms.Count == 0) Application.Exit();
+            else Application.OpenForms[0].FormClosed += WindowClosed;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace act2_8
         {
             var ret = new byte[first.Length + second.Length];
             Buffer.BlockCopy(first, 0, ret, 0, first.Length);
-            Buffer.BlockCopy(second, 0, ret, 0, second.Length);
+            Buffer.BlockCopy(second, 0, ret, first.Length, second.Length);
 
             return ret;
         }

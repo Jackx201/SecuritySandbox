@@ -59,7 +59,8 @@ namespace act2_8
                 ageTextBox,
                 irsnTextbox,
                 userTextBox,
-                passwordTextBox
+                passwordTextBox,
+                emailTextBox
             };
             
             foreach(TextBox textBox in textBoxes)
@@ -93,11 +94,13 @@ namespace act2_8
             }
 
             string query1;
-            query1 = "INSERT INTO students VALUES (@enrollmentid, @name, @last_name, @birthday, @age, @irsn, @username , @password, @salt);";
+            query1 = "INSERT INTO students VALUES (@enrollmentid, @name, @last_name, @birthday, @age, @irsn, @username , @password, @salt, @email);";
 
             SqlCommand cmd1 = new SqlCommand(query1, conexion);
             byte[] salt = encriptar.GenerateSalt();
             string password = passwordTextBox.Text.Trim();
+
+            var hashedPassword = encriptar.HashPasswordWithSalt(Encoding.UTF8.GetBytes(password), salt);
             string username = userTextBox.Text.Trim();
 
             cmd1.Parameters.Add("@enrollmentid", SqlDbType.Char);
@@ -109,6 +112,7 @@ namespace act2_8
             cmd1.Parameters.Add("@username", SqlDbType.VarChar);
             cmd1.Parameters.Add("@password", SqlDbType.VarBinary);
             cmd1.Parameters.Add("@salt", SqlDbType.VarBinary);
+            cmd1.Parameters.Add("@email", SqlDbType.VarChar);
 
             cmd1.Parameters["@enrollmentid"].Value = "12345678";
             cmd1.Parameters["@name"].Value = nameTextbox.Text;
@@ -117,8 +121,9 @@ namespace act2_8
             cmd1.Parameters["@age"].Value = Convert.ToInt32(ageTextBox.Text);
             cmd1.Parameters["@irsn"].Value = irsnTextbox.Text;
             cmd1.Parameters["@username"].Value = username;
-            cmd1.Parameters["@password"].Value = Encoding.UTF8.GetBytes(password);
+            cmd1.Parameters["@password"].Value = hashedPassword;
             cmd1.Parameters["@salt"].Value = salt;
+            cmd1.Parameters["@email"].Value = emailTextBox.Text;
 
 
             try
@@ -221,18 +226,11 @@ namespace act2_8
             encryptedText = Encryption(plainText, RSA.ExportParameters(false), false);
             saltTextBox.Text = ByteConverter.GetString(encryptedText);
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Close();
+        }
     }
 }
-
-/*SqlConnection myConnection = new SqlConnection(@"user id=sa;" + @"password=utlaguna1.; " +
-    @"server = CTEUTLD01\SEGURIDADB;" 
-    @"database = securityB;" 
-    + @"connection timeout=30");
-
-SqlConnection myConnection =
-    new SqlConnection(@"user id=DESKTOP-NHVI6LM\User072020;" +
-    @"password=7859;server=DESKTOP-NHVI6LM;" +
-    @"Trusted_Connection=yes" +
-    @"database=SecurityB;" +
-    @"connection timeout = 30");
-*/
