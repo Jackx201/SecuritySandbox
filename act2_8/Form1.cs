@@ -72,6 +72,14 @@ namespace act2_8
                 }
             }
 
+            if (Convert.ToInt32(ageTextBox.Text) < 18)
+            {
+                SUCCESS.Visible = false;
+                ERROR.Visible = true;
+                ERROR.Text = "Only 18 year students or older can be registered";
+                return;
+            }
+
 
             SqlConnection conexion = new SqlConnection("server=DESKTOP-NHVI6LM ; database=SecurityB ; integrated security = true");
 
@@ -131,11 +139,15 @@ namespace act2_8
                 cmd1.ExecuteNonQuery();
                 SUCCESS.Visible = true;
                 SUCCESS.Text = "New Student Registered Successfully!";
+                ERROR.Text = "";
+                ERROR.Visible = false;
                 conexion.Close();
             }
             catch (Exception err)
             {
                 ERROR.Visible = true;
+                SUCCESS.Text = "";
+                SUCCESS.Visible = false;
                 MessageBox.Show(err + "");
                 ERROR.Text = "Error 10001: Query Failed";
                 conexion.Close();
@@ -231,6 +243,19 @@ namespace act2_8
         {
             new Login().Show();
             this.Close();
+        }
+
+        private void birthdayTextbox_TextChanged(object sender, EventArgs e)
+        {
+            //int year = Convert.ToInt32(birthdayTextbox.Text.Substring(6, 4));
+
+            DateTime birthdate = Convert.ToDateTime(birthdayTextbox.Text);
+
+            int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+            int dob = int.Parse(birthdate.ToString("yyyyMMdd"));
+            int age = (now - dob) / 10000;
+
+            ageTextBox.Text = age.ToString();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace act2_8
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextbox = new System.Windows.Forms.TextBox();
             this.lastNameTextbox = new System.Windows.Forms.TextBox();
@@ -63,14 +63,12 @@ namespace act2_8
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.logoutButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -131,14 +129,19 @@ namespace act2_8
             // 
             // birthdayTextbox
             // 
+            this.birthdayTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.birthdayTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.birthdayTextbox.Enabled = false;
             this.birthdayTextbox.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birthdayTextbox.ForeColor = System.Drawing.SystemColors.Window;
             this.birthdayTextbox.Location = new System.Drawing.Point(9, 55);
             this.birthdayTextbox.Name = "birthdayTextbox";
             this.birthdayTextbox.ReadOnly = true;
-            this.birthdayTextbox.Size = new System.Drawing.Size(192, 34);
+            this.birthdayTextbox.Size = new System.Drawing.Size(192, 27);
             this.birthdayTextbox.TabIndex = 8;
             this.birthdayTextbox.Tag = "Birthday";
+            this.birthdayTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.birthdayTextbox.TextChanged += new System.EventHandler(this.birthdayTextbox_TextChanged);
             // 
             // ageTextBox
             // 
@@ -146,7 +149,7 @@ namespace act2_8
             this.ageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ageTextBox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ageTextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.ageTextBox.Location = new System.Drawing.Point(9, 13);
+            this.ageTextBox.Location = new System.Drawing.Point(11, 15);
             this.ageTextBox.MaxLength = 2;
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.ShortcutsEnabled = false;
@@ -215,14 +218,14 @@ namespace act2_8
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.GridColor = System.Drawing.Color.Red;
             this.dataGridView1.Location = new System.Drawing.Point(548, 1);
             this.dataGridView1.Name = "dataGridView1";
@@ -470,37 +473,10 @@ namespace act2_8
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.panel5.Controls.Add(this.ageTextBox);
-            this.panel5.Controls.Add(this.textBox5);
-            this.panel5.Controls.Add(this.textBox6);
             this.panel5.Location = new System.Drawing.Point(311, 411);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(213, 47);
             this.panel5.TabIndex = 33;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(18, 14);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(173, 20);
-            this.textBox5.TabIndex = 13;
-            this.textBox5.Tag = "Password";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(18, 15);
-            this.textBox6.MaxLength = 50;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(173, 20);
-            this.textBox6.TabIndex = 7;
-            this.textBox6.Tag = "Last Name";
             // 
             // panel6
             // 
@@ -536,6 +512,26 @@ namespace act2_8
             this.panel7.Size = new System.Drawing.Size(567, 79);
             this.panel7.TabIndex = 33;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(265, 16);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Universidad Tecnológica de la Laguna Durango";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(339, 25);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "Zahúl Guadalupe Domínguez Chávez";
+            // 
             // logoutButton
             // 
             this.logoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(175)))), ((int)(((byte)(148)))));
@@ -549,26 +545,6 @@ namespace act2_8
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(339, 25);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "Zahúl Guadalupe Domínguez Chávez";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(30, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(265, 16);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Universidad Tecnológica de la Laguna Durango";
             // 
             // panel8
             // 
@@ -737,8 +713,6 @@ namespace act2_8
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel panel7;
