@@ -37,7 +37,7 @@ namespace act2_8
         private bool isValidPassword(string username, string password)
         {
             userBE user = getUserFromDB(username);
-            bool isValid = true;
+            bool isValid = false;
 
             if(!string.IsNullOrEmpty(user.user))
             {
@@ -60,7 +60,7 @@ namespace act2_8
 
             using (SqlConnection connection = new SqlConnection("server=DESKTOP-NHVI6LM ; database=SecurityB ; integrated security = true"))
             {
-                string saltSaved = "select username, salt, password from students where username = @username";
+                string saltSaved = "select username, salt, password, email from students where username = @username or email = @username";
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
