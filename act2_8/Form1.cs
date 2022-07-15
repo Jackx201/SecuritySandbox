@@ -260,6 +260,21 @@ namespace act2_8
 
         private void updateISRN()
         {
+            TextBox[] textBoxes = new TextBox[] {
+                nameTextbox,
+                lastNameTextbox,
+                birthdayTextbox,
+            };
+
+            foreach (TextBox textBox in textBoxes)
+            {
+                if (!validateTextBox(textBox))
+                {
+                    MessageBox.Show("The field: " + textBox.Tag + " must be filled");
+                    return;
+                }
+            }
+
             string firstTwoLetters = lastNameTextbox.Text.Substring(0, 2);
             string thirdLetter = getThirdLetterOfISRN(lastNameTextbox.Text);
             string fourthLetter = nameTextbox.Text.Substring(0, 1);
