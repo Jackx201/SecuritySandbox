@@ -35,7 +35,7 @@ namespace act2_8
             this.lastNameTextbox = new System.Windows.Forms.TextBox();
             this.birthdayTextbox = new System.Windows.Forms.TextBox();
             this.ageTextBox = new System.Windows.Forms.TextBox();
-            this.irsnTextbox = new System.Windows.Forms.TextBox();
+            this.isrnTextbox = new System.Windows.Forms.TextBox();
             this.userTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.submitButton = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@ namespace act2_8
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.emailLabel = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.refreshIsrnbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -158,19 +159,21 @@ namespace act2_8
             this.ageTextBox.Tag = "Age";
             this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageTextBox_KeyPress);
             // 
-            // irsnTextbox
+            // isrnTextbox
             // 
-            this.irsnTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.irsnTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.irsnTextbox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.irsnTextbox.ForeColor = System.Drawing.Color.White;
-            this.irsnTextbox.Location = new System.Drawing.Point(18, 15);
-            this.irsnTextbox.MaxLength = 50;
-            this.irsnTextbox.Name = "irsnTextbox";
-            this.irsnTextbox.ShortcutsEnabled = false;
-            this.irsnTextbox.Size = new System.Drawing.Size(173, 20);
-            this.irsnTextbox.TabIndex = 10;
-            this.irsnTextbox.Tag = "IRSN";
+            this.isrnTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.isrnTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.isrnTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.isrnTextbox.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isrnTextbox.ForeColor = System.Drawing.Color.White;
+            this.isrnTextbox.Location = new System.Drawing.Point(18, 15);
+            this.isrnTextbox.MaxLength = 50;
+            this.isrnTextbox.Name = "isrnTextbox";
+            this.isrnTextbox.ReadOnly = true;
+            this.isrnTextbox.ShortcutsEnabled = false;
+            this.isrnTextbox.Size = new System.Drawing.Size(173, 20);
+            this.isrnTextbox.TabIndex = 10;
+            this.isrnTextbox.Tag = "IRSN";
             // 
             // userTextBox
             // 
@@ -227,7 +230,7 @@ namespace act2_8
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.GridColor = System.Drawing.Color.Red;
-            this.dataGridView1.Location = new System.Drawing.Point(548, 1);
+            this.dataGridView1.Location = new System.Drawing.Point(766, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(603, 679);
             this.dataGridView1.TabIndex = 15;
@@ -481,7 +484,7 @@ namespace act2_8
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.panel6.Controls.Add(this.irsnTextbox);
+            this.panel6.Controls.Add(this.isrnTextbox);
             this.panel6.Controls.Add(this.textBox7);
             this.panel6.Location = new System.Drawing.Point(311, 511);
             this.panel6.Name = "panel6";
@@ -617,12 +620,27 @@ namespace act2_8
             this.panel9.Size = new System.Drawing.Size(213, 288);
             this.panel9.TabIndex = 33;
             // 
+            // refreshIsrnbtn
+            // 
+            this.refreshIsrnbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(237)))), ((int)(((byte)(170)))));
+            this.refreshIsrnbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshIsrnbtn.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshIsrnbtn.ForeColor = System.Drawing.Color.Black;
+            this.refreshIsrnbtn.Location = new System.Drawing.Point(388, 478);
+            this.refreshIsrnbtn.Name = "refreshIsrnbtn";
+            this.refreshIsrnbtn.Size = new System.Drawing.Size(76, 27);
+            this.refreshIsrnbtn.TabIndex = 36;
+            this.refreshIsrnbtn.Text = "Refresh";
+            this.refreshIsrnbtn.UseVisualStyleBackColor = false;
+            this.refreshIsrnbtn.Click += new System.EventHandler(this.refreshIsrnbtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(20)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(543, 786);
+            this.ClientSize = new System.Drawing.Size(553, 786);
+            this.Controls.Add(this.refreshIsrnbtn);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.panel7);
@@ -685,7 +703,7 @@ namespace act2_8
         private System.Windows.Forms.TextBox lastNameTextbox;
         private System.Windows.Forms.TextBox birthdayTextbox;
         private System.Windows.Forms.TextBox ageTextBox;
-        private System.Windows.Forms.TextBox irsnTextbox;
+        private System.Windows.Forms.TextBox isrnTextbox;
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button submitButton;
@@ -725,6 +743,7 @@ namespace act2_8
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button refreshIsrnbtn;
     }
 }
 

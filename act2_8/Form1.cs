@@ -57,7 +57,7 @@ namespace act2_8
                 lastNameTextbox,
                 birthdayTextbox,
                 ageTextBox,
-                irsnTextbox,
+                isrnTextbox,
                 userTextBox,
                 passwordTextBox,
                 emailTextBox
@@ -127,7 +127,7 @@ namespace act2_8
             cmd1.Parameters["@last_name"].Value = lastNameTextbox.Text;
             cmd1.Parameters["@birthday"].Value = birthdayTextbox.Text;
             cmd1.Parameters["@age"].Value = Convert.ToInt32(ageTextBox.Text);
-            cmd1.Parameters["@irsn"].Value = irsnTextbox.Text;
+            cmd1.Parameters["@irsn"].Value = isrnTextbox.Text;
             cmd1.Parameters["@username"].Value = username;
             cmd1.Parameters["@password"].Value = hashedPassword;
             cmd1.Parameters["@salt"].Value = salt;
@@ -256,6 +256,31 @@ namespace act2_8
             int age = (now - dob) / 10000;
 
             ageTextBox.Text = age.ToString();
+        }
+
+        private void updateISRN()
+        {
+            string firstTwoLetters = lastNameTextbox.Text.Substring(0, 2);
+            string thirdLetter = getThirdLetterOfISRN(lastNameTextbox.Text);
+            string fourthLetter = nameTextbox.Text.Substring(0, 1);
+            string birthYear = birthdayTextbox.Text.Substring(8, 2);
+            string birthMonth = birthdayTextbox.Text.Substring(3, 2);
+            string birthDay = birthdayTextbox.Text.Substring(0, 2);
+            string homokey = "UTL";
+            string isrn = firstTwoLetters + thirdLetter + fourthLetter + birthYear + birthMonth + birthDay + homokey;
+            isrnTextbox.Text = isrn;
+        }
+
+        private void refreshIsrnbtn_Click(object sender, EventArgs e)
+        {
+            updateISRN();
+        }
+
+        private string getThirdLetterOfISRN(string lastName)
+        {
+            var spaceIndex = lastName.IndexOf(" ");
+            string thirdletter = lastName.Substring(spaceIndex + 1, 1);
+            return thirdletter;
         }
     }
 }

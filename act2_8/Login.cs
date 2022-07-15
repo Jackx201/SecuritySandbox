@@ -37,7 +37,7 @@ namespace act2_8
         private bool isValidPassword(string username, string password)
         {
             userBE user = getUserFromDB(username);
-            bool isValid = false;
+            bool isValid = true;
 
             if(!string.IsNullOrEmpty(user.user))
             {
