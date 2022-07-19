@@ -67,8 +67,13 @@ namespace act2_8
             {
                 if (!validateTextBox(textBox))
                 {
-                    MessageBox.Show("The field: " + textBox.Tag + " must be filled");
+                    ERROR.Visible = true;
+                    ERROR.Text = ("The field: " + textBox.Tag + " must be filled");
                     return;
+                } else
+                {
+                    ERROR.Visible = false;
+                    ERROR.Text = "";
                 }
             }
 
@@ -151,6 +156,12 @@ namespace act2_8
                 MessageBox.Show(err + "");
                 ERROR.Text = "Error 10001: Query Failed";
                 conexion.Close();
+                return;
+            }
+
+            foreach (TextBox textBox in textBoxes)
+            {
+                emptyTextBoxes(textBox);
             }
         }
 
@@ -247,15 +258,14 @@ namespace act2_8
 
         private void birthdayTextbox_TextChanged(object sender, EventArgs e)
         {
-            //int year = Convert.ToInt32(birthdayTextbox.Text.Substring(6, 4));
-
-            DateTime birthdate = Convert.ToDateTime(birthdayTextbox.Text);
-
+            DateTime birthdate = DateTime.Today;
+            if(birthdayTextbox.Text != "") birthdate = Convert.ToDateTime(birthdayTextbox.Text);
             int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
             int dob = int.Parse(birthdate.ToString("yyyyMMdd"));
             int age = (now - dob) / 10000;
 
             ageTextBox.Text = age.ToString();
+            updateISRN();
         }
 
         private void updateISRN()
@@ -270,7 +280,7 @@ namespace act2_8
             {
                 if (!validateTextBox(textBox))
                 {
-                    MessageBox.Show("The field: " + textBox.Tag + " must be filled");
+                    ERROR.Text = ("The field: " + textBox.Tag + " must be filled");
                     return;
                 }
             }
@@ -296,6 +306,11 @@ namespace act2_8
             var spaceIndex = lastName.IndexOf(" ");
             string thirdletter = lastName.Substring(spaceIndex + 1, 1);
             return thirdletter;
+        }
+
+        private void emptyTextBoxes(TextBox textBox)
+        {
+            textBox.Text = "";
         }
     }
 }
